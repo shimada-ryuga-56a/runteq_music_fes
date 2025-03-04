@@ -1,0 +1,12 @@
+<div class="px-3 py-2">
+  <% flash.each do |message_type, message| %>
+    <% case message_type %>
+      <% when "notice" %>
+        <%= render partial: "shared/flash_messages/success_flash_message", locals: { message: message } %>
+      <% when "alert" %>
+        <%= render partial: "shared/flash_messages/error_flash_message", locals: { message: message } %>
+      <% else %>
+        <%= render partial: "shared/flash_messages/normal_flash_message", locals: { message: message } %>
+    <% end %>
+  <% end %>
+</div>
