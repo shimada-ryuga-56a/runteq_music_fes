@@ -1,3 +1,8 @@
 <div class="page_margin">
   <h2 class="page_title">参加者一覧</h2>
+  <% if @attendees.empty? %>
+    <p>参加予定者はいません。</p>
+  <% else %>
+    <%= render partial: 'attendees', locals: { attendees: @attendees } %>
+  <% end %>
 </div>
