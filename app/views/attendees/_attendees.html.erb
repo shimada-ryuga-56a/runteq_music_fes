@@ -1,0 +1,5 @@
+<ul class="list bg-base-100 rounded-box shadow-md">
+  <% attendees.each do |attendee| %>
+    <%= render partial: 'attendee', locals: { attendee: attendee } %>
+  <% end %>
+</ul>
