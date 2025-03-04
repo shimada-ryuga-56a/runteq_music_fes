@@ -1,5 +1,7 @@
-<% if user_signed_in? %>
-  <%= render "shared/after_login_header" %>
-<% else %>
-  <%= render "shared/before_login_header" %>
-<% end %>
+<div class="pr-5">
+  <% if user_signed_in? %>
+    <%= render "shared/after_login_header" %>
+  <% else %>
+    <%= render "shared/before_login_header" %>
+  <% end %>
+</div>
