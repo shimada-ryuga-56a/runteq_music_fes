@@ -1,6 +1,7 @@
-<h2>Log in</h2>
+<div class="page_margin">
 
-<div class="p-4">
+  <h2 class="page_title">Log in</h2>
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
@@ -16,6 +17,6 @@
       <%= f.submit "Log in" %>
     </div>
   <% end %>
-</div>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
