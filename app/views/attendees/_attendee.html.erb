@@ -1,4 +1,4 @@
-<li class="list-row w-full" onclick="my_modal_1.showModal()">
+<li class="list-row w-full" onclick="my_modal_<%= attendee.id %>.showModal()">
   <div class="flex">
     <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp"/></div>
     <div class="pl-4">
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <dialog id="my_modal_1" class="modal">
+  <dialog id="my_modal_<%= attendee.id %>" class="modal">
     <%= render partial: 'show_modal', locals: { attendee: attendee } %>
   </dialog>
 </li>
