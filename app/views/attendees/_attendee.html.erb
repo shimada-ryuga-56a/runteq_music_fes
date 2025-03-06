@@ -2,6 +2,13 @@
   <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp"/></div>
   <div>
     <div><%= attendee.username %></div>
-    <div class="text-xs uppercase font-semibold opacity-60">Remaining Reason</div>
+    <div class="text-xs uppercase font-semibold opacity-60">
+      <% if attendee.role.present? %>
+        <%= attendee.role_i18n %>
+      <% end %>
+      <% if attendee.term.present? %>
+        <%= attendee.term %>期生
+      <% end %>
+    </div>
   </div>
 </li>
