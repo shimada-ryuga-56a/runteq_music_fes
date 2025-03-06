@@ -14,9 +14,8 @@
 
   <% if attendee.x_id.present? %>
     <div class="py-1 flex items-center">
-      <p>・</p>
       <%= link_to attendee.x_profile_link do %>
-        <i class="fa-brands fa-square-x-twitter fa-2x"></i>
+        <i class="fa-brands fa-square-x-twitter fa-2x w-1/10"></i>
       <% end %>
       <div data-controller="clipboard" data-clipboard-success-content-value="Copied!" class="flex items-center ml-2">
         <div class="">
@@ -24,6 +23,38 @@
         </div>
         <div class="btn ml-1 px-2">
           <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="text-xs">Copy ID</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if attendee.mattermost_link.present? %>
+    <div class="py-1 flex items-center">
+      <%= link_to attendee.mattermost_link do %>
+        <i class="fa-solid fa-clock fa-2x w-1/10"></i>
+      <% end %>
+      <div data-controller="clipboard" data-clipboard-success-content-value="Copied!" class="flex items-center ml-2">
+        <div class="">
+          <input type="text" value=<%= attendee.times_channel_name %> data-clipboard-target="source" disabled class="input text-info px-1" />
+        </div>
+        <div class="btn ml-1 px-2">
+          <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="text-xs">Copy ID</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if attendee.portfolio_link.present? %>
+    <div class="py-1 flex items-center">
+      <%= link_to "#{attendee.portfolio_link}" do %>
+        <i class="fa-solid fa-r fa-2x w-1/10"></i>
+      <% end %>
+      <div data-controller="clipboard" data-clipboard-success-content-value="Copied!" class="flex items-center ml-2">
+        <div class="">
+          <input type="text" value=<%= attendee.portfolio_link %> data-clipboard-target="source" disabled class="input text-info px-1" />
+        </div>
+        <div class="btn ml-1 px-2">
+          <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="text-xs">Copy URL</button>
         </div>
       </div>
     </div>
