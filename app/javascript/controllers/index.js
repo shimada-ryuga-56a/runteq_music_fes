@@ -4,6 +4,8 @@
 
 import { Application } from '@hotwired/stimulus'
 import Dialog from '@stimulus-components/dialog'
+import Clipboard from '@stimulus-components/clipboard'
 
 const application = Application.start()
 application.register('dialog', Dialog)
+application.register('clipboard', Clipboard)
