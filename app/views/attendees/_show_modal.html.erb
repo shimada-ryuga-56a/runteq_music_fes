@@ -1,4 +1,4 @@
-<div class="modal-box p-4">
+<div class="modal-box p-4 max-w-60">
   <h3 class="text-lg font-bold"><%= attendee.username %>さん</h3>
   <% if attendee.role.present? %>
     <p class="py-2">
@@ -12,53 +12,31 @@
     </p>
   <% end %>
 
-  <% if attendee.x_id.present? %>
-    <div class="my-2 flex items-center">
-      <%= link_to attendee.x_profile_link do %>
-        <i class="fa-brands fa-square-x-twitter fa-2x w-1/10"></i>
-      <% end %>
-      <div data-controller="clipboard" data-clipboard-success-content-value="Copied!" class="flex items-center ml-2">
-        <div class="">
-          <input type="text" value=@<%= attendee.x_id %> data-clipboard-target="source" disabled class="input text-info px-1" />
-        </div>
-        <div class="btn ml-1 px-2">
-          <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="text-xs">Copy ID</button>
-        </div>
+  <div class="my-2 grid grid-cols-3 gap-2">
+    <% if attendee.x_id.present? %>
+      <div class="flex items-center justify-center">
+        <%= link_to attendee.x_profile_link do %>
+          <i class="fa-brands fa-square-x-twitter fa-2x w-1/10"></i>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <% if attendee.mattermost_link.present? %>
-    <div class="my-2 flex items-center">
-      <%= link_to attendee.mattermost_link do %>
-        <i class="fa-solid fa-clock fa-2x w-1/10"></i>
-      <% end %>
-      <div data-controller="clipboard" data-clipboard-success-content-value="Copied!" class="flex items-center ml-2">
-        <div class="">
-          <input type="text" value=<%= attendee.times_channel_name %> data-clipboard-target="source" disabled class="input text-info px-1" />
-        </div>
-        <div class="btn ml-1 px-2">
-          <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="text-xs">Copy ID</button>
-        </div>
+    <% if attendee.mattermost_link.present? %>
+      <div class="my-2 flex items-center justify-center">
+        <%= link_to attendee.mattermost_link do %>
+          <i class="fa-solid fa-clock fa-2x w-1/10"></i>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <% if attendee.portfolio_link.present? %>
-    <div class="my-2 flex items-center">
-      <%= link_to "#{attendee.portfolio_link}" do %>
-        <i class="fa-solid fa-r fa-2x w-1/10"></i>
-      <% end %>
-      <div data-controller="clipboard" data-clipboard-success-content-value="Copied!" class="flex items-center ml-2">
-        <div class="">
-          <input type="text" value=<%= attendee.portfolio_link %> data-clipboard-target="source" disabled class="input text-info px-1" />
-        </div>
-        <div class="btn ml-1 px-2">
-          <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="text-xs">Copy URL</button>
-        </div>
+    <% if attendee.portfolio_link.present? %>
+      <div class="my-2 flex items-center justify-center">
+        <%= link_to "#{attendee.portfolio_link}" do %>
+          <i class="fa-solid fa-r fa-2x w-1/10"></i>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <div class="modal-action my-2">
     <form method="dialog">
