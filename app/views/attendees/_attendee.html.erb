@@ -1,8 +1,8 @@
-<li class="list-row">
+<li class="list-row w-full" onclick="my_modal_1.showModal()">
   <div class="flex">
     <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp"/></div>
     <div class="pl-4">
-      <div><%= attendee.username %></div>
+      <div class="link"><%= attendee.username %></div>
       <div class="text-xs uppercase font-semibold opacity-60">
         <% if attendee.role.present? %>
           <%= attendee.role_i18n %>
@@ -13,4 +13,8 @@
       </div>
     </div>
   </div>
+
+  <dialog id="my_modal_1" class="modal">
+    <%= render partial: 'show_modal', locals: { attendee: attendee } %>
+  </dialog>
 </li>
