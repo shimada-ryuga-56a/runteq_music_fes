@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum :role, { student: 0, ex_student: 1, operator: 2 }
+
+  def x_profile_link
+    "https://x.com/#{x_id}"
+  end
 end
