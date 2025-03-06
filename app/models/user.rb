@@ -9,4 +9,10 @@ class User < ApplicationRecord
   def x_profile_link
     "https://x.com/#{x_id}"
   end
+
+  def times_channel_name
+    if mattermost_link.present? && mattermost_link.include?("channels")
+      mattermost_link.split("/").last
+    end
+  end
 end
