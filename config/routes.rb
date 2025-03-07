@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'mypages/show'
-  get 'mypages/edit'
-  get 'mypages/update'
   get 'static_pages/top'
   devise_for :users, skip: :all
   devise_scope :user do
@@ -17,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :attendees, only: %i[index]
+  resource :mypage, only: %i[show edit update]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
