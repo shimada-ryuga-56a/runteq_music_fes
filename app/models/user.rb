@@ -15,4 +15,16 @@ class User < ApplicationRecord
       mattermost_link.split("/").last
     end
   end
+
+  def self.role_options
+    roles.map { |k, _| [human_attribute_enum_value(:role_i18n, k), k] }.to_h
+  end
+
+  def self.human_attribute_enum_value(attr_name, value)
+    human_attribute_name("#{attr_name}.#{value}")
+  end
+
+  def human_attribute_enum(attr_name)
+    self.class.human_attribute_enum_value(attr_name, self[attr_name])
+  end
 end
