@@ -36,6 +36,16 @@ ja:
           attributes:
             username:
               blank: を入力してください。
+            email:
+              blank: を入力してください。
+              invalid: が正しくありません。
+              taken: はすでに使用されています。
+            password:
+              blank: を入力してください。
+              too_short: "%{count}文字以上で入力してください。"
+            password_confirmation:
+              blank: を入力してください。
+              confirmation: がパスワードと一致しません。
             mattermost_link:
               invalid: が正しくありません。
             portfolio_link:
