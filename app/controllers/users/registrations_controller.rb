@@ -34,4 +34,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     super
   end
+
+  private
+
+  def after_sign_up_path_for(resource)
+    attendees_path
+  end
+
+  def after_update_path_for(resource)
+    attendees_path
+  end
 end

@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     delete 'users/sign_out' => 'devise/sessions#destroy', as: :destroy_user_session
     get 'users/sign_up' => 'devise/registrations#new', as: :new_user_registration
     post 'users' => 'devise/registrations#create', as: :user_registration
-    get 'users/edit' => 'devise/registrations#edit', as: :edit_user_registration
-    patch 'users' => 'devise/registrations#update'
-    put 'users' => 'devise/registrations#update'
+    get 'users/edit' => 'users/registrations#edit', as: :edit_user_registration
+    patch 'users' => 'users/registrations#update'
+    put 'users' => 'users/registrations#update'
     patch 'users/attend_status' => 'users/registrations#attend_status_update'
   end
 
