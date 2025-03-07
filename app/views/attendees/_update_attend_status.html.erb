@@ -1,12 +1,14 @@
-<% if current_user.present? %>
-  <% case current_user.attend? %>
-    <% when true %>
-      <div class="alert alert-warning">
-        <p>参加を<strong>取り消す</strong>場合は、<%= link_to 'こちら', users_attend_status_path, data: { "turbo_confirm": "参加ステータスを「不参加予定」に変更します。よろしいですか？", "turbo-method": :patch }, class: "link" %>から行ってください。</p>
-      </div>
-    <% when false %>
-      <div class="alert alert-warning">
-        <p>参加予定の場合は<%= link_to 'こちら', users_attend_status_path, data: { "turbo_confirm": "参加ステータスを「参加予定」に変更します。よろしいですか？", "turbo-method": :patch }, class: "link" %>から参加登録を行ってください。</p>
-      </div>
+<div class="py-4">
+  <% if current_user.present? %>
+    <% case current_user.attend? %>
+      <% when true %>
+        <div class="alert alert-warning">
+          <p>参加を<strong>取り消す</strong>場合は、<%= link_to 'こちら', users_attend_status_path, data: { "turbo_confirm": "参加ステータスを「不参加予定」に変更します。よろしいですか？", "turbo-method": :patch }, class: "link" %>から行ってください。</p>
+        </div>
+      <% else %>
+        <div class="alert alert-warning">
+          <p>参加予定の場合は<%= link_to 'こちら', users_attend_status_path, data: { "turbo_confirm": "参加ステータスを「参加予定」に変更します。よろしいですか？", "turbo-method": :patch }, class: "link" %>から参加登録を行ってください。</p>
+        </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
