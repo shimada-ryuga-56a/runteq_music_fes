@@ -1,2 +1,4 @@
-<h1>Mypages#edit</h1>
-<p>Find me in app/views/mypages/edit.html.erb</p>
+<div class="page_margin">
+  <h2 class="page_title">マイページ</h2>
+  <%= render partial: 'mypages/edit_form', locals: { user: current_user } %>
+</div>
