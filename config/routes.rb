@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'mypages/show'
+  get 'mypages/edit'
+  get 'mypages/update'
   get 'static_pages/top'
   devise_for :users, skip: :all
   devise_scope :user do
