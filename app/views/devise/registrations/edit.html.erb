@@ -22,7 +22,7 @@
 
       <fieldset class="fieldset">
         <%= f.label :term, '在籍状況', class:"fieldset-legend" %>
-        <%= f.select(:role, User.role_options, {}, class: 'select w-full') %>
+        <%= f.select :role, User.roles.keys.map { |key| [I18n.t("activerecord.enums.user.role.#{key}"), key] }, { include_blank: true }, class: "select w-full" %>
       </fieldset>
 
       <%= f.label :x_id, 'XのID', class:"fieldset-legend" %>
