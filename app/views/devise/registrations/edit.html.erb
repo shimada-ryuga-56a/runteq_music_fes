@@ -1,8 +1,6 @@
 <div class="page_margin">
   <h2 class="page_title">マイページ</h2>
 
-  <%= render partial: "attendees/update_attend_status" %>
-
   <div class="flex items-center justify-center md:pl-8">
     <div class="w-36 h-36">
       <%= render partial: 'users/icon', locals: { user: current_user } %>
@@ -23,7 +21,7 @@
       </fieldset>
 
       <fieldset class="fieldset">
-        <%= f.label :term, '役割', class:"fieldset-legend" %>
+        <%= f.label :term, '在籍状況', class:"fieldset-legend" %>
         <%= f.select(:role, User.role_options, {}, class: 'select w-full') %>
       </fieldset>
 
