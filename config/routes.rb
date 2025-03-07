@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :attendees, only: %i[index]
-  resource :mypage, only: %i[show edit update]
+  resource :mypage, only: %i[edit update]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
