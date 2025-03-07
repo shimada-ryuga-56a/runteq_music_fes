@@ -4,6 +4,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+  def attend_status_update
+    @user = current_user
+    @user.update(attend?: true)
+    redirect_to attendees_path, notice: "出席を確認しました！"
+  end
+
   # GET /resource/sign_up
   # def new
   #   super

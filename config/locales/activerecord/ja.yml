@@ -1,0 +1,7 @@
+ja:
+  enums:
+    user:
+      role:
+        student: '受講生'
+        ex_student: '卒業生'
+        operator: '運営陣'

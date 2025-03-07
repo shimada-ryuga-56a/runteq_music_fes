@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     get 'users/edit' => 'devise/registrations#edit', as: :edit_user_registration
     patch 'users' => 'devise/registrations#update'
     put 'users' => 'devise/registrations#update'
+    patch 'users/attend_status' => 'users/registrations#attend_status_update'
   end
+
+  resources :attendees, only: %i[index]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

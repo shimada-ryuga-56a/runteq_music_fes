@@ -115,6 +115,8 @@ GEM
     devise-i18n (1.12.1)
       devise (>= 4.9.0)
     drb (2.2.1)
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.13.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -289,6 +291,7 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  enum_help
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
