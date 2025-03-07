@@ -7,7 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def attend_status_update
     @user = current_user
     @user.update(attend?: true)
-    redirect_to attendees_path, notice: "出席を確認しました"
+    redirect_to attendees_path, notice: "出席を確認しました！"
   end
 
   # GET /resource/sign_up
