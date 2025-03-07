@@ -10,6 +10,6 @@
 
 @layer utilities {
   .page_margin {
-    @apply mx-6 md:mx-8 lg:mx-12 mb-10 mt-2;
+    @apply mx-6 md:mx-8 lg:mx-12 mb-20 mt-2;
   }
 }
