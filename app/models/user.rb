@@ -10,6 +10,9 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :email, presence: true
 
+  validates :mattermost_link, format: { with: URI::DEFAULT_PARSER.make_regexp }, allow_blank: true
+  validates :portfolio_link, format: { with: URI::DEFAULT_PARSER.make_regexp }, allow_blank: true
+
   def x_profile_link
     "https://x.com/#{x_id}"
   end
