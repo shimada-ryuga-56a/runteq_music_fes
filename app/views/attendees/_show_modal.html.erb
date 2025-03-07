@@ -6,6 +6,12 @@
     </p>
   <% end %>
 
+  <% if attendee == current_user %>
+    <p class="py-4">
+      <%= link_to 'ユーザー情報を編集する', edit_user_registration_path, class: 'link' %>
+    </p>
+  <% end %>
+
   <% if attendee.term.present? %>
     <p class="py-1">
       ・<%= attendee.term %>期生

@@ -1,43 +1,49 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="page_margin">
+  <h2 class="page_title">マイページ</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="flex items-center justify-center md:pl-8">
+    <div class="w-36 h-36">
+      <%= render partial: 'users/icon', locals: { user: current_user } %>
+    </div>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <div class="py-2 px-4 w-full">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+      <fieldset class="fieldset">
+        <%= f.label :username, 'ユーザー名', class:"fieldset-legend" %>
+        <%= f.text_field :username, class: "input w-full", placeholder: "ユーザー名"  %>
+      </fieldset>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <fieldset class="fieldset">
+        <%= f.label :term, '何期生？', class:"fieldset-legend" %>
+        <%= f.number_field :term, class: "input w-full" %>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <%= f.label :term, '在籍状況', class:"fieldset-legend" %>
+        <%= f.select :role, User.roles.keys.map { |key| [I18n.t("activerecord.enums.user.role.#{key}"), key] }, { include_blank: true }, class: "select w-full" %>
+      </fieldset>
+
+      <%= f.label :x_id, 'XのID', class:"fieldset-legend" %>
+      <label class="input w-full">
+        <span class="label">@</span>
+        <%= f.text_field :x_id, placeholder: "example_id", type:"text" %>
+      </label>
+
+      <fieldset class="fieldset">
+        <%= f.label :mattermost_link, 'Mattermost times URL', class:"fieldset-legend" %>
+        <%= f.text_field :mattermost_link, class: "input w-full", placeholder: "https://chat.runteq.jp/runteq/channels/example_user"  %>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <%= f.label :portfolio_link, 'ソーシャルポートフォリオ URL', class:"fieldset-legend" %>
+        <%= f.text_field :portfolio_link, class: "input w-full", placeholder: "https://school.runteq.jp/social_portfolios/example_user"  %>
+      </fieldset>
+
+      <div class="py-2">
+        <%= f.submit '更新', class: "btn" %>
+      </div>
     <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+</div>

@@ -30,6 +30,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 gem "devise"
 gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem 'enum_help'
 
 # Use Redis adapter to run Action Cable in production

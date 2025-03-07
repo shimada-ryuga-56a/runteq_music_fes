@@ -1,11 +1,7 @@
 <div class="page_margin">
   <h2 class="page_title">参加者一覧</h2>
 
-  <% unless current_user.nil? || current_user.attend? %>
-    <div class="alert alert-warning">
-      <p>参加予定の場合は、マイページもしくは<%= link_to 'こちら', users_attend_status_path, data: { confirm: "参加ステータスを「参加予定」に変更します。よろしいですか？", "turbo-method": :patch }, class: "link" %>から参加登録を行ってください。</p>
-    </div>
-  <% end %>
+  <%= render partial: 'attendees/update_attend_status' %>
   <% if @attendees.empty? %>
     <p>参加予定者はいません。</p>
   <% else %>

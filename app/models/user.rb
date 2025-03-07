@@ -6,6 +6,13 @@ class User < ApplicationRecord
 
   enum :role, { student: 0, ex_student: 1, operator: 2 }
 
+  validates :password, presence: true, on: :create
+  validates :username, presence: true
+  validates :email, presence: true
+
+  validates :mattermost_link, format: { with: URI::DEFAULT_PARSER.make_regexp }, allow_blank: true
+  validates :portfolio_link, format: { with: URI::DEFAULT_PARSER.make_regexp }, allow_blank: true
+
   def x_profile_link
     "https://x.com/#{x_id}"
   end
@@ -14,5 +21,19 @@ class User < ApplicationRecord
     if mattermost_link.present? && mattermost_link.include?("channels")
       mattermost_link.split("/").last
     end
+  end
+
+  def update_with_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank?
+        params.delete(:password)
+        params.delete(:password_confirmation) if params[:password_confirmation].blank?
+    end
+
+    result = update(params, *options)
+
+    clean_up_passwords
+    result
   end
 end
