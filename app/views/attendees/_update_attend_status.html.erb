@@ -3,7 +3,7 @@
     <% case current_user.attend? %>
       <% when true %>
         <div class="alert alert-info">
-          <p>【あなたは<strong>「参加予定」</strong>で登録されています。】<br>参加の取り消しは<%= link_to 'こちら', users_attend_status_path, data: { "turbo_confirm": "参加をキャンセルします。よろしいですか？", "turbo-method": :patch }, class: "link" %>から行ってください。</p>
+          <p>【あなたは<strong>「参加予定」</strong>で登録されています。】<br>Mattermostのグループに招待されていることを確認してください。<br>参加の取り消しは<%= link_to 'こちら', users_attend_status_path, data: { "turbo_confirm": "参加をキャンセルします。よろしいですか？", "turbo-method": :patch }, class: "link" %>から行ってください。</p>
         </div>
       <% else %>
         <div class="alert alert-warning">
