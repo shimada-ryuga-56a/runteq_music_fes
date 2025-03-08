@@ -1,2 +1,22 @@
-<h1>Artists#new</h1>
-<p>Find me in app/views/artists/new.html.erb</p>
+<div class="page_margin">
+  <h2 class="page_title">出演希望申請フォーム</h2>
+  <div class="divider"></div>
+  <p class="my-2">以下のフォームに必要事項を入力し、送信ボタンを押してください。</p>
+  <div class="divider"></div>
+  <div class="my-2">
+    <%= form_with model: @artist, local: true do |f| %>
+      <div class="fieldset my-2">
+        <%= f.label :name, "アーティスト名", class: "fieldset-legend" %>
+        <%= f.text_field :name,  placeholder: "アーティスト名", class: "input" %>
+      </div>
+
+      <div class="fieldset my-2">
+        <%= f.label :performance_category, "カテゴリー" %>
+        <%= f.select :performance_category, Artist.performance_categories.keys.map { |key| [I18n.t("activerecord.enums.artist.performance_category.#{key}"), key] }, { include_blank: true }, class: "select w-full" %>
+      </div>
+
+      <div class="my-2">
+        <%= f.submit "送信", class: "btn" %>
+      </div>
+    <% end %>
+</div>
