@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to attendees_path, notice: "参加をキャンセルしました🥺🥺🥺🥺🥺🥺🥺"
     else
       @user.update(attend?: true)
-      redirect_to attendees_path, notice: "参加を申し込みました！🎉"
+      redirect_to attendees_path, notice: "参加を申し込みました！🎉\n後ほど、Mattermostのグループに招待します。"
     end
   end
 
