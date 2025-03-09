@@ -5,7 +5,7 @@
   <div class="divider"></div>
   <div class="my-2">
     <%= form_with model: @artist, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, local: true do |f| %>
-      <%= render partial: "shared/error_messages", locals: {resource: @artist} %>
+      <%= render partial: "shared/error_messages", locals: {model: @artist} %>
       <div class="fieldset my-2">
         <%= f.label :name, "アーティスト名", class: "fieldset-legend" %>
         <%= f.text_field :name,  placeholder: "アーティスト名", class: "input" %>
