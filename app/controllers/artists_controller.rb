@@ -11,7 +11,6 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-    p @artist
     respond_to do |format|
       if @artist.save
         format.html { redirect_to artists_path, notice: '出演登録が完了しました🎉🎉🎉' }
@@ -20,8 +19,6 @@ class ArtistsController < ApplicationController
         format.turbo_stream { render 'artists/turbo_streams/create_failure', status: :unprocessable_entity }
       end
     end
-    p @artist.errors.full_messages
-    p flash
   end
 
   private
