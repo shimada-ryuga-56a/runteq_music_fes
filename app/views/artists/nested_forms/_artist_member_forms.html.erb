@@ -1,0 +1,13 @@
+<template data-nested-form-target="template">
+  <%= f.fields_for :artist_members, ArtistMember.new, child_index: 'NEW_RECORD' do |fields| %>
+    <%= render "artists/nested_forms/artist_member_form", f: fields %>
+  <% end %>
+</template>
+
+<%= f.fields_for :artist_members do |members| %>
+  <%= render "artists/nested_forms/artist_member_form", f: members %>
+<% end %>
+
+<div data-nested-form-target="target"></div>
+
+<button type="button" data-action="nested-form#add" class="btn">＋メンバー追加</button>
