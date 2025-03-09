@@ -20,3 +20,9 @@ ja:
           session: 'セッション'
           instrumental: 'インスト'
           other: 'その他'
+        requested_play_time:
+          five_minutes: '5分'
+          ten_minutes: '10分'
+          fifteen_minutes: '15分'
+          twenty_minutes: '20分'
+          twenty_five_minutes: '25分'
