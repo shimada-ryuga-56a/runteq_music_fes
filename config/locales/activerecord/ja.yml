@@ -1,4 +1,7 @@
 ja:
+  flash:
+    error:
+      submit_failed: '登録できませんでした。'
   enums:
     user:
       role:
@@ -6,6 +9,27 @@ ja:
         ex_student: '卒業生'
         operator: '運営'
   activerecord:
+    models:
+      user: 'ユーザー'
+      artist: 'アーティスト'
+    attributes:
+      artist:
+        name: '出演名'
+        performance_category: 'カテゴリ'
+        requested_play_time: '演奏希望時間'
+        artist_members: 'メンバー'
+    errors:
+      models:
+        artist:
+          attributes:
+            name:
+              blank: "を入力してください"
+            performance_category:
+              blank: "を選択してください"
+            requested_play_time:
+              blank: "を選択してください"
+            artist_members:
+              blank: "は最低一人選択してください"
     enums:
       user:
         role:
