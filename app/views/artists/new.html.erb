@@ -5,6 +5,7 @@
   <div class="divider"></div>
   <div class="my-2">
     <%= form_with model: @artist, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, local: true do |f| %>
+      <%= render partial: "shared/error_messages", locals: {resource: @artist} %>
       <div class="fieldset my-2">
         <%= f.label :name, "アーティスト名", class: "fieldset-legend" %>
         <%= f.text_field :name,  placeholder: "アーティスト名", class: "input" %>
@@ -16,8 +17,18 @@
       </div>
 
       <div class="fieldset my-2">
+        <%= f.label :requested_play_time, "希望演奏時間", class: "fieldset-legend" %>
+        <%= f.select :requested_play_time, Artist.requested_play_times.keys.map { |key| [I18n.t("activerecord.enums.artist.requested_play_time.#{key}"), key] }, { include_blank: true }, class: "select w-full" %>
+      </div>
+
+      <div class="fieldset my-2">
         <%= f.label "メンバー", class: "fieldset-legend" %>
         <%= render "artists/nested_forms/artist_member_forms", f: f %>
+      </div>
+
+      <div class="fieldset my-2">
+        <%= f.label :performance_content, "演奏内容", class: "fieldset-legend" %>
+        <%= f.text_area :performance_content, placeholder: "現時点で予定している演奏内容を簡単に記述してください。", class: "textarea w-full" %>
       </div>
 
       <div class="my-2">
