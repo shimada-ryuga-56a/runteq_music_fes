@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
       if @artist.save
         format.html { redirect_to artists_path, notice: '出演登録が完了しました🎉🎉🎉' }
       else
-        flash.now[:error] = I18n.t('flash.error.post')
+        flash.now[:alert] = I18n.t('flash.error.submit_failed')
         format.turbo_stream { render 'artists/turbo_streams/create_failure', status: :unprocessable_entity }
       end
     end
