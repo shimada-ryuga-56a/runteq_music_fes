@@ -11,4 +11,8 @@
         </div>
     <% end %>
   </div>
+<% else %>
+  <div class="alert alert-info">
+    <p>【参加希望の方へ】<br><%= link_to 'ログイン後', new_user_session_path, class: "link" %>、参加申し込みを行ってください。</p>
+  </div>
 <% end %>
