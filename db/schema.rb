@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_08_141704) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_12_035804) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_08_141704) do
     t.integer "performance_category", null: false
     t.integer "requested_play_time", null: false
     t.text "performance_content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "playable_instruments", force: :cascade do |t|
+    t.string "instrument_name", null: false
+    t.integer "user_id", null: false
+    t.boolean "hope_for_matching?", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
