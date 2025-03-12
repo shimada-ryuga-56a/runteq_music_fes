@@ -1,0 +1,2 @@
+class PlayableInstrument < ApplicationRecord
+end
