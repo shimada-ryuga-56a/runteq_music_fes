@@ -1,0 +1,52 @@
+ja:
+  flash:
+    error:
+      submit_failed: '登録できませんでした。'
+  enums:
+    user:
+      role:
+        student: '受講生'
+        ex_student: '卒業生'
+        operator: '運営'
+  activerecord:
+    models:
+      user: 'ユーザー'
+      artist: 'アーティスト'
+    attributes:
+      artist:
+        name: '出演名'
+        performance_category: 'カテゴリ'
+        requested_play_time: '演奏希望時間'
+        artist_members: 'メンバー'
+    errors:
+      models:
+        artist:
+          attributes:
+            name:
+              blank: "を入力してください"
+            performance_category:
+              blank: "を選択してください"
+            requested_play_time:
+              blank: "を選択してください"
+            artist_members:
+              blank: "は最低一人選択してください"
+    enums:
+      user:
+        role:
+          student: '受講生'
+          ex_student: '卒業生'
+          operator: '運営'
+      artist:
+        performance_category:
+          band: 'バンド'
+          dance: 'ダンス'
+          acoustic: 'アコースティック'
+          session: 'セッション'
+          instrumental: 'インスト'
+          other: 'その他'
+        requested_play_time:
+          five_minutes: '5分'
+          ten_minutes: '10分'
+          fifteen_minutes: '15分'
+          twenty_minutes: '20分'
+          twenty_five_minutes: '25分'

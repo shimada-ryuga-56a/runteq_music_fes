@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .page_title {
+    @apply text-2xl font-bold mb-4;
+  }
+}
+
+@layer utilities {
+  .page_margin {
+    @apply mx-6 md:mx-8 lg:mx-12 mb-20 mt-2;
+  }
+}

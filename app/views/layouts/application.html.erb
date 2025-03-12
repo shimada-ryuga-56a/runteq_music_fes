@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html data-theme="dracula">
+  <head>
+    <title>RUNTEQ MUSIC FES</title>
+    <script src="https://kit.fontawesome.com/03ee00071c.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag('favicon.ico') %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= display_meta_tags(default_meta_tags) %>
+  </head>
+
+  <body>
+    <%= render "shared/header" %>
+    <%= render "shared/flash_messages/flash_messages" %>
+    <%= yield %>
+    <%= render "shared/footer" %>
+  </body>
+</html>

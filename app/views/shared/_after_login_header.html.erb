@@ -1,0 +1,10 @@
+<div class="navbar bg-base-100 shadow-sm">
+  <%= link_to root_path, class: "flex-1" do %>
+    <p class="btn btn-ghost text-xl">RUNTEQ MUSIC FES</p>
+  <% end %>
+  <div class="flex-none">
+    <%= link_to destroy_user_session_path, data: { "turbo-method": :delete } do %>
+      <i class="fa-solid fa-right-from-bracket"></i>
+    <% end %>
+  </div>
+</div>

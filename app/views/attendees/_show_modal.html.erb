@@ -1,0 +1,52 @@
+<div class="modal-box p-4 max-w-60">
+  <h3 class="text-lg font-bold"><%= attendee.username %>さん</h3>
+  <% if attendee.role.present? %>
+    <p class="py-2">
+      (<%= attendee.role_i18n %>)
+    </p>
+  <% end %>
+
+  <% if attendee == current_user %>
+    <p class="py-4">
+      <%= link_to 'ユーザー情報を編集する', edit_user_registration_path, class: 'link' %>
+    </p>
+  <% end %>
+
+  <% if attendee.term.present? %>
+    <p class="py-1">
+      ・<%= attendee.term %>期生
+    </p>
+  <% end %>
+
+  <div class="my-2 grid grid-cols-3 gap-2">
+    <% if attendee.x_id.present? %>
+      <div class="flex items-center justify-center">
+        <%= link_to attendee.x_profile_link do %>
+          <i class="fa-brands fa-square-x-twitter fa-2x w-1/10"></i>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if attendee.mattermost_link.present? %>
+      <div class="my-2 flex items-center justify-center">
+        <%= link_to attendee.mattermost_link do %>
+          <i class="fa-solid fa-clock fa-2x w-1/10"></i>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if attendee.portfolio_link.present? %>
+      <div class="my-2 flex items-center justify-center">
+        <%= link_to "#{attendee.portfolio_link}" do %>
+          <i class="fa-solid fa-r fa-2x w-1/10"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="modal-action my-2">
+    <form method="dialog">
+      <button class="btn">閉じる</button>
+    </form>
+  </div>
+</div>

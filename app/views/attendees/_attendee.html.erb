@@ -1,0 +1,22 @@
+<li class="list-row w-full" onclick="my_modal_<%= attendee.id %>.showModal()">
+  <div class="flex">
+    <div class="w-10 h-10">
+      <div class="skeleton w-10 h-10 rounded-3"></div>
+    </div>
+    <div class="pl-4">
+      <div class="link"><%= attendee.username %></div>
+      <div class="text-xs uppercase font-semibold opacity-60">
+        <% if attendee.role.present? %>
+          <%= attendee.role_i18n %>
+        <% end %>
+        <% if attendee.term.present? %>
+          <%= attendee.term %>期生
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <dialog id="my_modal_<%= attendee.id %>" class="modal">
+    <%= render partial: 'show_modal', locals: { attendee: attendee } %>
+  </dialog>
+</li>
