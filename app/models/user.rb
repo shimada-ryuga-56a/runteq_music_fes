@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   has_many :artist_members, dependent: :destroy
   has_many :artists, through: :artist_members
+  has_many :playable_instruments, dependent: :destroy
 
   def x_profile_link
     "https://x.com/#{x_id}"
