@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -22,17 +24,17 @@ class User < ApplicationRecord
   end
 
   def times_channel_name
-    if mattermost_link.present? && mattermost_link.include?("channels")
-      mattermost_link.split("/").last
-    end
+    return unless mattermost_link.present? && mattermost_link.include?('channels')
+
+    mattermost_link.split('/').last
   end
 
   def update_with_password(params, *options)
     params.delete(:current_password)
 
     if params[:password].blank?
-        params.delete(:password)
-        params.delete(:password_confirmation) if params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) if params[:password_confirmation].blank?
     end
 
     result = update(params, *options)
