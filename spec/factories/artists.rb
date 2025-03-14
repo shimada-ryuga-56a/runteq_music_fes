@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   alphabets = ('A'..'Z').to_a
   sequence :name do |n|
@@ -6,8 +8,8 @@ FactoryBot.define do
 
   factory :artist do
     name { generate(:name) }
-    performance_category { "band" }
-    requested_play_time { "five_minutes" }
+    performance_category { 'band' }
+    requested_play_time { 'five_minutes' }
     performance_content { 'performance_content' }
 
     after(:build) do |artist|
@@ -20,8 +22,8 @@ FactoryBot.define do
 
   factory :correct_artist, class: Artist do
     name { generate(:name) }
-    performance_category { "band" }
-    requested_play_time { "five_minutes" }
+    performance_category { 'band' }
+    requested_play_time { 'five_minutes' }
     performance_content { 'performance_content' }
 
     after(:build) do |artist|
