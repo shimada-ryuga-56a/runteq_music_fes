@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
@@ -24,6 +26,7 @@ class ArtistsController < ApplicationController
   private
 
   def artist_params
-    params.require(:artist).permit(:name, :performance_category, :requested_play_time, :performance_content, artist_members_attributes: [:id, :user_id, :_destroy])
+    params.require(:artist).permit(:name, :performance_category, :requested_play_time, :performance_content,
+                                   artist_members_attributes: %i[id user_id _destroy])
   end
 end
