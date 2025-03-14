@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "Artists", type: :system do
   before do
-    driven_by(:selenium_chrome_headless)
+    driven_by(:rack_test)
     @user = FactoryBot.create(:user)
   end
 
   let(:user1) { create(:user) }
   let(:user2) { create(:user) }
 
-  describe '未ログイン時', js: true do
+  describe '未ログイン時' do
     context "artists/indexにアクセスしたとき" do
       it "一覧ページが表示される" do
         visit artists_path
@@ -25,7 +25,7 @@ RSpec.describe "Artists", type: :system do
     end
   end
 
-  describe 'ログイン時', js: true do
+  describe 'ログイン時' do
     before do
       sign_in @user
     end
