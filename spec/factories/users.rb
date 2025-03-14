@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   alphabets = ('a'..'z').to_a
   sequence :email do |n|
-    alphabets.shuffle.join + n.to_s + '@example.com'
+    "#{alphabets.shuffle.join}#{n}@example.com"
   end
   sequence :username do |n|
     alphabets.shuffle.join + n.to_s
