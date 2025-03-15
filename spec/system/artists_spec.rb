@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Artists", type: :system do
+RSpec.describe 'Artists', type: :system do
   before do
     driven_by(:rack_test)
     @user = FactoryBot.create(:user)
@@ -10,15 +12,15 @@ RSpec.describe "Artists", type: :system do
   let(:user2) { create(:user) }
 
   describe '未ログイン時' do
-    context "artists/indexにアクセスしたとき" do
-      it "一覧ページが表示される" do
+    context 'artists/indexにアクセスしたとき' do
+      it '一覧ページが表示される' do
         visit artists_path
         expect(page).to have_content '【演奏者一覧】'
       end
     end
 
-    context "artists/newにアクセスしたとき" do
-      it "ログイン画面にリダイレクトされる" do
+    context 'artists/newにアクセスしたとき' do
+      it 'ログイン画面にリダイレクトされる' do
         visit new_artist_path
         expect(page).to have_content 'ログイン'
       end
@@ -30,15 +32,15 @@ RSpec.describe "Artists", type: :system do
       sign_in @user
     end
 
-    context "artists/indexにアクセスしたとき" do
-      it "一覧ページが表示される" do
+    context 'artists/indexにアクセスしたとき' do
+      it '一覧ページが表示される' do
         visit artists_path
         expect(page).to have_content '【演奏者一覧】'
       end
     end
 
-    context "artists/newにアクセスしたとき" do
-      it "新規登録画面が表示される" do
+    context 'artists/newにアクセスしたとき' do
+      it '新規登録画面が表示される' do
         visit new_artist_path
         expect(page).to have_content '出演希望申請フォーム'
       end
