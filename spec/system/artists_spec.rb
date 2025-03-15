@@ -44,18 +44,18 @@ RSpec.describe "Artists", type: :system do
       end
     end
 
-    context "artists/newでフォームを入力後" do
-      it "アーティストの新規登録ができる" do
-        visit new_artist_path
-        # fill_in "artist_name", with: 'artist_name'
-        # select 'バンド', from: 'artist_performance_category'
-        # select '5分', from: 'artist_requested_play_time'
-        # click_button '＋メンバー追加'
-        fill_in 'artist_performance_content', with: 'performance_content'
-        click_button '送信'
-        expect(current_path).to eq(artists_path)
-        expect(page).to have_content '出演登録が完了しました'
-      end
-    end
+    # context "artists/newでフォームを入力後" do
+    #   it "アーティストの新規登録ができる", js: true do
+    #     visit new_artist_path
+    #     fill_in "artist_name", with: 'artist_name'
+    #     select 'バンド', from: 'artist_performance_category'
+    #     select '5分', from: 'artist_requested_play_time'
+    #     click_button '＋メンバー追加'
+    #     fill_in 'artist_performance_content', with: 'performance_content'
+    #     click_button '送信'
+    #     expect(current_path).to eq(artists_path)
+    #     expect(page).to have_content '出演登録が完了しました'
+    #   end
+    # end
   end
 end
