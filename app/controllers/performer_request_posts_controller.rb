@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class PerformerRequestPostsController < ApplicationController
-  def index
-  end
+  def index; end
 
   def new
     @post = current_user.performer_request_posts.build
@@ -11,24 +12,20 @@ class PerformerRequestPostsController < ApplicationController
     if @post.save
       redirect_to performer_request_posts_path, notice: '投稿が完了しました'
     else
-      p "error"
+      p 'error'
       p @post.errors.full_messages
       flash.now[:alert] = '投稿に失敗しました'
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
-  def show
-  end
+  def show; end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 

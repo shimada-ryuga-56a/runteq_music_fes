@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :performer_request_post do
     offer_or_request { 0 }

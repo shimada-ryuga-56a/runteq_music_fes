@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PerformerRequestPost < ApplicationRecord
   validates :offer_or_request, presence: true
   validates :comment, presence: true

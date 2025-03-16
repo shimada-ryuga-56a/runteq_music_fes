@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "PerformerRequestPosts", type: :system do
+RSpec.describe 'PerformerRequestPosts', type: :system do
   before do
     driven_by(:rack_test)
     @user = FactoryBot.create(:user)

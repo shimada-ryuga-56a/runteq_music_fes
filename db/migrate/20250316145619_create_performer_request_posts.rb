@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreatePerformerRequestPosts < ActiveRecord::Migration[7.1]
   def change
     create_table :performer_request_posts do |t|
