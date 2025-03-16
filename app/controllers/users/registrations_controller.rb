@@ -27,9 +27,9 @@ module Users
     # end
 
     # GET /resource/edit
-    # def edit
-    #   super
-    # end
+    def edit
+      @user = current_user
+    end
 
     # PUT /resource
 
