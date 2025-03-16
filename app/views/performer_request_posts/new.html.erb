@@ -3,13 +3,13 @@
 
   <%= form_with model: @post, url: performer_request_posts_path, local: true do |f| %>
     <%= render 'shared/error_messages', model: @post %>
-    <div class="form-group">
-      <%= f.label :offer_or_request, '投稿種別', class: "form-label" %>
-      <%= f.select :offer_or_request, PerformerRequestPost.offer_or_requests.keys.map { |key| [I18n.t("activerecord.enums.performer_request_post.offer_or_request.#{key}"), key] }, { include_blank: true }, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :comment, 'コメント', class: "form-label" %>
-      <%= f.text_field :comment, class: "form-control" %>
+    <fieldset class="fieldset">
+      <%= f.label :offer_or_request, '投稿種別', class: "fieldset-legend" %>
+      <%= f.select :offer_or_request, PerformerRequestPost.offer_or_requests.keys.map { |key| [I18n.t("activerecord.enums.performer_request_post.offer_or_request.#{key}"), key] }, { include_blank: true }, class: "select" %>
+    </fieldset>
+    <div class="fieldset mb-4">
+      <%= f.label :comment, 'コメント', class: "fieldset-legend" %>
+      <%= f.text_area :comment, class: "textarea w-full", placeholder: "e.g.) ギターを弾ける人を募集しています！\ne.g.) ドラムを叩けるので呼んでください！" %>
     </div>
     <div class="form-group">
       <%= f.submit '投稿する', class: 'btn btn-primary' %>
