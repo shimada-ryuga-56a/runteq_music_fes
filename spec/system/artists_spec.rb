@@ -15,7 +15,7 @@ RSpec.describe 'Artists', type: :system do
     context 'artists/indexにアクセスしたとき' do
       it '一覧ページが表示される' do
         visit artists_path
-        expect(page).to have_content '【演奏者一覧】'
+        expect(page).to have_content '出演者情報'
       end
     end
 
@@ -35,7 +35,7 @@ RSpec.describe 'Artists', type: :system do
     context 'artists/indexにアクセスしたとき' do
       it '一覧ページが表示される' do
         visit artists_path
-        expect(page).to have_content '【演奏者一覧】'
+        expect(page).to have_content '出演者情報'
       end
     end
 
