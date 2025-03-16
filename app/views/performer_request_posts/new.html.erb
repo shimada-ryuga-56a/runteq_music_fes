@@ -1,6 +1,15 @@
 <div class="page_margin">
   <h2 class="page_title">出演希望者掲示板 投稿ページ</h2>
 
+  <div class="card card-border bg-accent">
+    <div class="card-body">
+      <h2 class="card-title">【出演希望・出演者募集中の方】</h2>
+      <p>
+        投稿すると、<%= link_to "出演希望者用掲示板", performer_request_posts_path, class: "link" %>に公開されます📝<br>投稿後の編集・削除等は自由に行えますので、どしどし投稿をお願いします！
+      </p>
+    </div>
+  </div>
+
   <%= form_with model: @post, url: performer_request_posts_path, local: true do |f| %>
     <%= render 'shared/error_messages', model: @post %>
     <fieldset class="fieldset">
