@@ -30,9 +30,7 @@ class ApplicationController < ActionController::Base
                                         :x_id,
                                         :attend?,
                                         :term,
-                                        :role,
-                                        { playable_instruments_attributes: %i[instrument_name hope_for_matching
-                                                                              _destroy id] }
+                                        :role
                                       ])
   end
 end
