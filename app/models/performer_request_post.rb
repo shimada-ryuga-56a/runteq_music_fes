@@ -1,0 +1,2 @@
+class PerformerRequestPost < ApplicationRecord
+end
