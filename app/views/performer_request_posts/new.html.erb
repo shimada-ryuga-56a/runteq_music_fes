@@ -1,2 +1,18 @@
-<h1>PerformerRequestPosts#new</h1>
-<p>Find me in app/views/performer_request_posts/new.html.erb</p>
+<div class="page_margin">
+  <h2 class="page_title">出演希望者掲示板 投稿ページ</h2>
+
+  <%= form_with model: @post, url: performer_request_posts_path, local: true do |f| %>
+    <%= render 'shared/error_messages', model: @post %>
+    <div class="form-group">
+      <%= f.label :offer_or_request, '投稿種別', class: "form-label" %>
+      <%= f.select :offer_or_request, PerformerRequestPost.offer_or_requests.keys.map { |key| [I18n.t("activerecord.enums.performer_request_post.offer_or_request.#{key}"), key] }, { include_blank: true }, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :comment, 'コメント', class: "form-label" %>
+      <%= f.text_field :comment, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit '投稿する', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+<div>
