@@ -12,15 +12,12 @@ ja:
     models:
       user: 'ユーザー'
       artist: 'アーティスト'
-      playable_instrument: '経験楽器'
     attributes:
       artist:
         name: '出演名'
         performance_category: 'カテゴリ'
         requested_play_time: '演奏希望時間'
         artist_members: 'メンバー'
-      playable_instrument:
-        instrument_name: '楽器名'
     errors:
       models:
         artist:
@@ -33,10 +30,6 @@ ja:
               blank: "を選択してください"
             artist_members:
               blank: "は最低一人選択してください"
-        playable_instrument:
-          attributes:
-            instrument_name:
-              blank: "を入力してください"
     enums:
       user:
         role:
