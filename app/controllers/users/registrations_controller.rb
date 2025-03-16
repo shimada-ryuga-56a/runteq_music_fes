@@ -27,9 +27,10 @@ module Users
     # end
 
     # GET /resource/edit
-    # def edit
-    #   super
-    # end
+    def edit
+      @user = current_user
+      10.times { @user.playable_instruments.build }
+    end
 
     # PUT /resource
 
