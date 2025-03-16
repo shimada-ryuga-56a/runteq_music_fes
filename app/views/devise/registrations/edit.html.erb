@@ -41,8 +41,6 @@
         <%= f.text_field :portfolio_link, class: "input w-full", placeholder: "https://school.runteq.jp/social_portfolios/example_user"  %>
       </fieldset>
 
-      <%= render partial: "users/nested_forms/playable_instruments_form", locals: { f: f } %>
-
       <div class="py-2">
         <%= f.submit '更新', class: "btn" %>
       </div>
