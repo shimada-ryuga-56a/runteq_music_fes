@@ -6,15 +6,29 @@
     </div>
     <ul class="mt-6 flex flex-col gap-2 text-xs">
       <li class="flex items-start">
-        <svg xmlns="http://www.w3.org/2000/svg" class="size-8 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <div class="w-8 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-full me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        </div>
+        <span>
+          <%= Date.today.strftime("%m/%d") %>現在では、<strong><%= artists.length %>枠</strong>の出演が決定しています！🎉
+        </span>
+      </li>
+      <li class="flex items-start">
+        <div class="w-8 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-full me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        </div>
         <span>音楽祭を出演者として盛り上げてくださる方々を募集しています！</span>
       </li>
       <li class="flex items-start">
-        <svg xmlns="http://www.w3.org/2000/svg" class="size-8 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <div class="w-8 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-full me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        </div>
         <span>バンド、弾き語り、セッション、合唱など、形態は問いません！</span>
       </li>
       <li class="flex items-start">
-      <svg xmlns="http://www.w3.org/2000/svg" class="size-8 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <div class="w-8 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-full me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        </div>
         <span>ソロでの出演〜大勢での出演まで、出演人数も問いません。</span>
       </li>
     </ul>
