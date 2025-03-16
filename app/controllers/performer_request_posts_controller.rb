@@ -9,7 +9,7 @@ class PerformerRequestPostsController < ApplicationController
   def create
     @post = current_user.performer_request_posts.build(post_params)
     if @post.save
-      redirect_to performer_request_posts_path, notice: '出演登録が完了しました'
+      redirect_to performer_request_posts_path, notice: '投稿が完了しました'
     else
       p "error"
       p @post.errors.full_messages
