@@ -10,7 +10,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-@artists = ["あいみょん", "BUMP OF CHICKEN", "King Gnu", "Mrs. GREEN APPLE", "Official髭男dism", "Perfume", "RADWIMPS", "Reol", "米津玄師", "YOASOBI", "ヨルシカ", "和楽器バンド"]
+@artists = ['あいみょん', 'BUMP OF CHICKEN', 'King Gnu', 'Mrs. GREEN APPLE', 'Official髭男dism', 'Perfume', 'RADWIMPS',
+            'Reol', '米津玄師', 'YOASOBI', 'ヨルシカ', '和楽器バンド']
 
 # ユーザー
 puts '== Creating Users =='
@@ -29,7 +30,7 @@ puts '== Creating Users =='
 end
 
 puts '== Deleting No Title PerformerRequestPosts =='
-@no_title_performer_request_posts = PerformerRequestPost.where(title: "title")
+@no_title_performer_request_posts = PerformerRequestPost.where(title: 'title')
 @no_title_performer_request_posts.each do |post|
   puts '*'
   post.destroy
