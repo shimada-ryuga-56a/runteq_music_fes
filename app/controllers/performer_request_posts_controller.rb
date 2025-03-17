@@ -3,8 +3,7 @@
 class PerformerRequestPostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   def index
-    @offer_posts = PerformerRequestPost.where(offer_or_request: 'offer').includes(:user).order(created_at: :desc)
-    @request_posts = PerformerRequestPost.where(offer_or_request: 'request').includes(:user).order(created_at: :desc)
+    @posts = PerformerRequestPost.order(created_at: :desc)
     @post_users = User.where(id: PerformerRequestPost.pluck(:user_id))
   end
 
@@ -44,7 +43,7 @@ class PerformerRequestPostsController < ApplicationController
   private
 
   def post_params
-    params.require(:performer_request_post).permit(:offer_or_request, :comment)
+    params.require(:performer_request_post).permit(:title, :comment)
   end
 
   def set_post
