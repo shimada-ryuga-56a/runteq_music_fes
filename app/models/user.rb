@@ -18,8 +18,7 @@ class User < ApplicationRecord
   has_many :artist_members, dependent: :destroy
   has_many :artists, through: :artist_members
 
-  has_many :playable_instruments, dependent: :destroy
-  accepts_nested_attributes_for :playable_instruments, allow_destroy: true, reject_if: :all_blank
+  has_many :performer_request_posts, dependent: :destroy
 
   def x_profile_link
     "https://x.com/#{x_id}"
