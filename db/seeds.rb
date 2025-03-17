@@ -13,7 +13,7 @@
 # ユーザー
 puts '== Creating Users =='
 
-10.times do |i|
+20.times do |i|
   User.find_or_create_by!(email: "example#{i}@email.com") do |user|
     puts '*'
     user.username = "example#{i}"
@@ -22,6 +22,7 @@ puts '== Creating Users =='
     user.password_confirmation = 'password'
     user.role = i % 3
     user.term = i * 3
+    user.is_attending = true
   end
 end
 

@@ -22,4 +22,20 @@ FactoryBot.define do
     password_confirmation { 'password' }
     username { generate(:username) }
   end
+
+  factory :attend_user, class: User do
+    email { generate(:email) }
+    password { 'password' }
+    password_confirmation { 'password' }
+    username { generate(:username) }
+    is_attending { true }
+  end
+
+  factory :not_attend_user, class: User do
+    email { generate(:email) }
+    password { 'password' }
+    password_confirmation { 'password' }
+    username { generate(:username) }
+    is_attending { false }
+  end
 end
