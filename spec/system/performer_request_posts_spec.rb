@@ -8,11 +8,21 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
     @user = FactoryBot.create(:user)
   end
 
+  let!(:correct_performer_request_post) { FactoryBot.create(:correct_performer_request_post) }
+  let!(:correct_performer_request_post_create) { FactoryBot.create(:correct_performer_request_post) }
+
   describe '未ログイン時' do
     context 'performer_request_posts/newにアクセスしたとき' do
       it 'ログイン画面にリダイレクトされる' do
         visit new_performer_request_post_path
         expect(page).to have_content 'ログインもしくはアカウント登録してください。'
+      end
+    end
+
+    context 'performer_request_postsにアクセスしたとき' do
+      it '一覧画面が表示される' do
+        visit performer_request_posts_path
+        expect(page).to have_content '出演希望者掲示板'
       end
     end
   end
@@ -37,6 +47,13 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
         click_button '投稿する'
         expect(current_path).to eq(performer_request_posts_path)
         expect(page).to have_content '投稿が完了しました'
+      end
+    end
+
+    context 'performer_request_postsにアクセスしたとき' do
+      it '一覧画面が表示される' do
+        visit performer_request_posts_path
+        expect(page).to have_content '出演希望者掲示板'
       end
     end
   end
