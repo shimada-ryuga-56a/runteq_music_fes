@@ -1,0 +1,15 @@
+<div class="card bg-neutral card-xs shadow-sm p-4">
+  <div class="card-body">
+    <h2 class="card-title text-xl font-bold">
+      <%= simple_format(post.comment) %>
+    </h2>
+    <p class="text-xs md:text-sm">
+      <%= post.user.term && post.user.term %>期生
+      <%= post.user.username %> さん<br>
+      （<%= post.created_at.strftime("%m月%d日 %H:%M") %>）
+    </p>
+    <div class="justify-end card-actions">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>

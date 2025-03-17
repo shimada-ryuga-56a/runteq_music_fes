@@ -1,3 +1,6 @@
 <div class="page_margin">
   <h2 class="page_title">出演希望者掲示板</h2>
+  <%= render partial: "performer_request_posts/index/request_posts", locals: { posts: @request_posts } %>
+  <div class="divider"></div>
+  <%= render partial: "performer_request_posts/index/offer_posts", locals: { posts: @offer_posts } %>
 </div>
