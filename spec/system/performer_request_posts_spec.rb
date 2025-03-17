@@ -40,9 +40,9 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
     end
 
     context 'performer_request_posts/newでフォームを入力後' do
-      it '出演希望申請ができる', js: true do
+      it '出演希望が投稿できる', js: true do
         visit new_performer_request_post_path
-        select '出演希望', from: 'performer_request_post_offer_or_request'
+        fill_in 'performer_request_post_title', with: 'title'
         fill_in 'performer_request_post_comment', with: 'comment'
         click_button '投稿する'
         expect(current_path).to eq(performer_request_posts_path)
@@ -59,13 +59,13 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
 
     context '自分の投稿の編集画面にアクセスしたとき' do
       it '編集画面が表示される' do
-        post = @user.performer_request_posts.create(offer_or_request: 'offer', comment: 'comment')
+        post = @user.performer_request_posts.create(title: 'title', comment: 'comment')
         visit edit_performer_request_post_path(post)
         expect(page).to have_content '出演募集 掲示板 投稿編集'
       end
 
       it '編集ができる' do
-        post = @user.performer_request_posts.create(offer_or_request: 'offer', comment: 'comment')
+        post = @user.performer_request_posts.create(title: 'title', comment: 'comment')
         visit edit_performer_request_post_path(post)
         fill_in 'performer_request_post_comment', with: 'comment2'
         click_button '更新する'

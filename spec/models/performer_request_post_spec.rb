@@ -11,8 +11,8 @@ RSpec.describe PerformerRequestPost, type: :model do
       end
     end
 
-    context 'when offer_or_request is missing' do
-      it { is_expected.to validate_presence_of :offer_or_request }
+    context 'when title is missing' do
+      it { is_expected.to validate_presence_of :title }
     end
 
     context 'when comment is missing' do
