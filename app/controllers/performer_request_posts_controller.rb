@@ -24,9 +24,9 @@ class PerformerRequestPostsController < ApplicationController
 
   def edit
     set_post
-    if @post.user != current_user
-      redirect_to performer_request_posts_path, alert: '編集権限がありません'
-    end
+    return unless @post.user != current_user
+
+    redirect_to performer_request_posts_path, alert: '編集権限がありません'
   end
 
   def update
