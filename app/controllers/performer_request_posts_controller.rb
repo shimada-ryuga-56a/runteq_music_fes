@@ -2,8 +2,9 @@
 
 class PerformerRequestPostsController < ApplicationController
   def index
-    @offer_posts = PerformerRequestPost.where(offer_or_request: 'offer')
-    @request_posts = PerformerRequestPost.where(offer_or_request: 'request')
+    @offer_posts = PerformerRequestPost.where(offer_or_request: 'offer').includes(:user)
+    @request_posts = PerformerRequestPost.where(offer_or_request: 'request').includes(:user)
+    @post_users = User.where(id: PerformerRequestPost.pluck(:user_id))
   end
 
   def new
