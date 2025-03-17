@@ -5,7 +5,9 @@
     <div class="card-body">
       <h2 class="card-title">【出演希望・出演者募集中の方】</h2>
       <p>
-        投稿すると、<%= link_to "出演募集 掲示板", performer_request_posts_path, class: "link" %>に公開されます📝<br>投稿後の編集・削除等は自由に行えますので、どしどし投稿をお願いします！
+        投稿すると、<%= link_to "出演募集 掲示板", performer_request_posts_path, class: "link" %>に公開されます📝<br>
+        「楽器は弾けるけど、歌ってくれる人がいない…」「歌ってみたいけど楽器は弾けない…」など、出演希望者同士の交流を目的とした掲示板です！<br>
+        投稿後の編集・削除等は自由に行えます。
       </p>
     </div>
   </div>
@@ -13,12 +15,12 @@
   <%= form_with model: @post, url: performer_request_posts_path, local: true do |f| %>
     <%= render 'shared/error_messages', model: @post %>
     <fieldset class="fieldset">
-      <%= f.label :offer_or_request, '投稿種別', class: "fieldset-legend" %>
-      <%= f.select :offer_or_request, PerformerRequestPost.offer_or_requests.keys.map { |key| [I18n.t("activerecord.enums.performer_request_post.offer_or_request.#{key}"), key] }, { include_blank: true }, class: "select" %>
+      <%= f.label :title, 'タイトル', class: "fieldset-legend" %>
+      <%= f.text_field :title, class: "input w-full", placeholder: "e.g.) ギターを弾ける人を募集します！" %>
     </fieldset>
     <div class="fieldset mb-4">
       <%= f.label :comment, 'コメント', class: "fieldset-legend" %>
-      <%= f.text_area :comment, class: "textarea w-full", placeholder: "e.g.) ギターを弾ける人を募集しています！\ne.g.) ドラムを叩けるので呼んでください！" %>
+      <%= f.text_area :comment, class: "textarea w-full", placeholder: "e.g.) ギターを弾ける人を募集しています！\ne.g.) ワンオクとかを歌いたいので呼んでください！" %>
     </div>
     <div class="form-group">
       <%= f.submit '投稿する', class: 'btn btn-primary' %>
