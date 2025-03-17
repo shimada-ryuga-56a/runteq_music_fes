@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resource :accesses, only: %i[show]
   resources :artists, only: %i[index new create]
 
-  resources :performer_request_posts
+  resources :performer_request_posts, except: %i[show] do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
