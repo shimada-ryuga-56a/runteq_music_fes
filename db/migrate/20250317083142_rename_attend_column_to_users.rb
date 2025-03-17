@@ -1,0 +1,5 @@
+class RenameAttendColumnToUsers < ActiveRecord::Migration[7.1]
+  def change
+    rename_column :users, :attend?, :attend
+  end
+end
