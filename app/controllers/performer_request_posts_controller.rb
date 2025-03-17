@@ -24,7 +24,12 @@ class PerformerRequestPostsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @post = PerformerRequestPost.find(params[:id])
+    if @post.user != current_user
+      redirect_to performer_request_posts_path, alert: '編集権限がありません'
+    end
+  end
 
   def update; end
 
