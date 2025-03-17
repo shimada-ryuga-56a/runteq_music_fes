@@ -10,7 +10,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-@artists = ["あいみょん", "BUMP OF CHICKEN", "King Gnu", "Mrs. GREEN APPLE", "Official髭男dism", "Perfume", "RADWIMPS", "Reol", "米津玄師", "YOASOBI". "ヨルシカ", "和楽器バンド"]
+@artists = ["あいみょん", "BUMP OF CHICKEN", "King Gnu", "Mrs. GREEN APPLE", "Official髭男dism", "Perfume", "RADWIMPS", "Reol", "米津玄師", "YOASOBI", "ヨルシカ", "和楽器バンド"]
 
 # ユーザー
 puts '== Creating Users =='
