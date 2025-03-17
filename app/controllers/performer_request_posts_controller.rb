@@ -31,7 +31,15 @@ class PerformerRequestPostsController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    @post = PerformerRequestPost.find(params[:id])
+    if @post.update(post_params)
+      redirect_to performer_request_posts_path, notice: '編集が完了しました'
+    else
+      flash.now[:alert] = '編集に失敗しました'
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   def show; end
 
