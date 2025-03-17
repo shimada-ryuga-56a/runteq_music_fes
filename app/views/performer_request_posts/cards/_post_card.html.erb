@@ -17,7 +17,7 @@
           <i class="fa-solid fa-pen-to-square text-lg text-primary"></i>
         <% end %>
         <%= link_to post, data: { "turbo-method": :delete, "turbo-confirm": "本当に削除しますか？" } do %>
-          <i class="fa-solid fa-trash text-lg text-primary ml-4"></i>
+          <i class="fa-solid fa-trash text-lg text-primary ml-4 delete_post_<%= post.id %>"></i>
         <% end %>
       </div>
     <% end %>
