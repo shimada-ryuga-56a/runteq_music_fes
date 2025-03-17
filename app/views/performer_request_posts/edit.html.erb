@@ -1,2 +1,18 @@
-<h1>PerformerRequestPosts#edit</h1>
-<p>Find me in app/views/performer_request_posts/edit.html.erb</p>
+<div class="page_margin">
+  <h2 class="page_title">出演希望者掲示板 投稿編集</h2>
+
+  <%= form_with model: @post, url: performer_request_post_path(@post), local: true, method: :patch do |f| %>
+    <%= render 'shared/error_messages', model: @post %>
+    <fieldset class="fieldset">
+      <%= f.label :offer_or_request, '投稿種別', class: "fieldset-legend" %>
+      <%= f.select :offer_or_request, PerformerRequestPost.offer_or_requests.keys.map { |key| [I18n.t("activerecord.enums.performer_request_post.offer_or_request.#{key}"), key] }, { include_blank: true }, class: "select" %>
+    </fieldset>
+    <div class="fieldset mb-4">
+      <%= f.label :comment, 'コメント', class: "fieldset-legend" %>
+      <%= f.text_area :comment, class: "textarea w-full", placeholder: "e.g.) ギターを弾ける人を募集しています！\ne.g.) ドラムを叩けるので呼んでください！" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit '更新する', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+<div>
