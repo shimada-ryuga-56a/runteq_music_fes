@@ -22,7 +22,7 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
     context 'performer_request_postsにアクセスしたとき' do
       it '一覧画面が表示される' do
         visit performer_request_posts_path
-        expect(page).to have_content '出演希望者掲示板'
+        expect(page).to have_content '出演募集 掲示板'
       end
     end
   end
@@ -35,7 +35,7 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
     context 'performer_request_posts/newにアクセスしたとき' do
       it '新規登録画面が表示される' do
         visit new_performer_request_post_path
-        expect(page).to have_content '出演希望者掲示板 投稿ページ'
+        expect(page).to have_content '出演募集 掲示板 投稿ページ'
       end
     end
 
@@ -53,7 +53,7 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
     context 'performer_request_postsにアクセスしたとき' do
       it '一覧画面が表示される' do
         visit performer_request_posts_path
-        expect(page).to have_content '出演希望者掲示板'
+        expect(page).to have_content '出演募集 掲示板'
       end
     end
 
@@ -61,7 +61,7 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
       it '編集画面が表示される' do
         post = @user.performer_request_posts.create(offer_or_request: 'offer', comment: 'comment')
         visit edit_performer_request_post_path(post)
-        expect(page).to have_content '出演希望者掲示板 投稿編集'
+        expect(page).to have_content '出演募集 掲示板 投稿編集'
       end
 
       it '編集ができる' do

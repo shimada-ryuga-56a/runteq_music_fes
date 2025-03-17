@@ -26,7 +26,7 @@ puts '== Creating Users =='
   end
 end
 
-# 出演希望者掲示板
+# 出演募集 掲示板
 puts '== Creating PerformerRequestPosts =='
 10.times do |i|
   PerformerRequestPost.find_or_create_by!(comment: "comment#{i}") do |post|

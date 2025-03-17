@@ -12,7 +12,7 @@ ja:
     models:
       user: 'ユーザー'
       artist: 'アーティスト'
-      performer_request_post: '出演掲示板への投稿'
+      performer_request_post: '出演募集 掲示板への投稿'
     attributes:
       artist:
         name: '出演名'
