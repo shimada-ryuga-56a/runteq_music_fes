@@ -20,7 +20,7 @@ ja:
         requested_play_time: '演奏希望時間'
         artist_members: 'メンバー'
       performer_request_post:
-        offer_or_request: '投稿種別'
+        title: 'タイトル'
         comment: 'コメント'
     errors:
       models:
@@ -36,7 +36,7 @@ ja:
               blank: "は最低一人選択してください"
         performer_request_post:
           attributes:
-            offer_or_request:
+            title:
               blank: "を選択してください"
             comment:
               blank: "を入力してください"
@@ -60,7 +60,3 @@ ja:
           fifteen_minutes: '15分'
           twenty_minutes: '20分'
           twenty_five_minutes: '25分'
-      performer_request_post:
-        offer_or_request:
-          offer: '出演希望'
-          request: '出演者募集'
