@@ -29,9 +29,9 @@ end
 # 出演募集 掲示板
 puts '== Creating PerformerRequestPosts =='
 10.times do |i|
-  PerformerRequestPost.find_or_create_by!(comment: "comment#{i}") do |post|
+  PerformerRequestPost.find_or_create_by!(comment: "comment#{i}", title: "title#{i}") do |post|
     puts '*'
-    post.offer_or_request = i % 2
+    post.title = "title#{i}"
     post.user_id = 1
     post.comment = "comment#{i}"
   end
