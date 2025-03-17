@@ -57,7 +57,7 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
       end
     end
 
-    context "自分の投稿の編集画面にアクセスしたとき" do
+    context '自分の投稿の編集画面にアクセスしたとき' do
       it '編集画面が表示される' do
         post = @user.performer_request_posts.create(offer_or_request: 'offer', comment: 'comment')
         visit edit_performer_request_post_path(post)
