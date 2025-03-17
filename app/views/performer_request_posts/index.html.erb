@@ -1,13 +1,11 @@
 <div class="page_margin">
-  <h2 class="page_title">出演希望者掲示板</h2>
+  <h2 class="page_title">出演募集 掲示板</h2>
   <div class="flex justify-end">
     <div class="btn btn-primary">
       <%= link_to "書き込みはこちら", new_performer_request_post_path %>
     </div>
   </div>
-  <%= render partial: "performer_request_posts/index/request_posts", locals: { posts: @request_posts } %>
-  <div class="divider"></div>
-  <%= render partial: "performer_request_posts/index/offer_posts", locals: { posts: @offer_posts } %>
+  <%= render partial: "performer_request_posts/index/posts", locals: { posts: @posts } %>
 </div>
 
 <%= render partial: "users/modals/prepare_user_modals", locals: { users: @post_users } %>

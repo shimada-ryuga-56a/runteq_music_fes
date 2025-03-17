@@ -2,13 +2,13 @@
 
 FactoryBot.define do
   factory :performer_request_post do
-    offer_or_request { 0 }
+    title { 'title' }
     comment { 'MyText' }
     user
   end
 
   factory :correct_performer_request_post, class: PerformerRequestPost do
-    offer_or_request { 0 }
+    title { 'title' }
     comment { 'MyText' }
     user
   end
