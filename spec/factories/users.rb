@@ -28,7 +28,7 @@ FactoryBot.define do
     password { 'password' }
     password_confirmation { 'password' }
     username { generate(:username) }
-    attend { true }
+    is_attending { true }
   end
 
   factory :not_attend_user, class: User do
@@ -36,6 +36,6 @@ FactoryBot.define do
     password { 'password' }
     password_confirmation { 'password' }
     username { generate(:username) }
-    attend { false }
+    is_attending { false }
   end
 end

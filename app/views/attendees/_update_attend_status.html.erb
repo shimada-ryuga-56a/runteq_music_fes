@@ -1,6 +1,6 @@
 <% if current_user.present? %>
   <div class="p-1 my-4">
-    <% case current_user.attend? %>
+    <% case current_user.is_attending? %>
       <% when true %>
         <div class="alert alert-info">
           <p>【<strong>「参加予定」</strong>で登録されています。】<br>参加の取り消しは<%= link_to 'こちら', users_attend_status_path, data: { "turbo_confirm": "参加をキャンセルします。よろしいですか？", "turbo-method": :patch }, class: "link" %>から行ってください。</p>

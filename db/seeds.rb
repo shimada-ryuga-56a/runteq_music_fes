@@ -22,7 +22,7 @@ puts '== Creating Users =='
     user.password_confirmation = 'password'
     user.role = i % 3
     user.term = i * 3
-    user.attend = true
+    user.is_attending = true
   end
 end
 

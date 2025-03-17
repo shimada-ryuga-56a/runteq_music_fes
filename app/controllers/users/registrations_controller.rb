@@ -7,11 +7,11 @@ module Users
 
     def attend_status_update
       @user = current_user
-      if @user.attend?
-        @user.update(attend: false)
+      if @user.is_attending
+        @user.update(is_attending: false)
         redirect_to attendees_path, notice: '参加をキャンセルしました🥺🥺🥺🥺🥺🥺🥺'
       else
-        @user.update(attend: true)
+        @user.update(is_attending: true)
         redirect_to attendees_path, notice: "参加を申し込みました！🎉\n後ほど、Mattermostのグループに招待します。"
       end
     end

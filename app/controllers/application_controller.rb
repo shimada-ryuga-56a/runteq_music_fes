@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
                                         mattermost_link
                                         portfolio_link
                                         x_id
-                                        attend
+                                        is_attending
                                         term
                                         role
                                       ])
