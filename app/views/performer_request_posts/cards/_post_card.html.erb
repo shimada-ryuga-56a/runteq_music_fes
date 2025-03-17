@@ -8,6 +8,11 @@
       <%= post.user.username %> さん<br>
       （<%= post.created_at.strftime("%m月%d日 %H:%M") %>）
     </p>
+    <% if post.user == current_user %>
+      <%= link_to edit_performer_request_post_path(post.id) do %>
+        <i class="fa-solid fa-pen-to-square text-lg text-primary"></i>
+      <% end %>
+    <% end %>
     <div class="justify-end card-actions" onclick="my_modal_<%= post.user.id %>.showModal()">
       <div class="btn btn-soft btn-primary btn-md">
         <p>投稿者に連絡する📱</p>
