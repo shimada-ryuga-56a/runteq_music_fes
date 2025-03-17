@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PerformerRequestPostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
   def index
     @offer_posts = PerformerRequestPost.where(offer_or_request: 'offer').includes(:user)
     @request_posts = PerformerRequestPost.where(offer_or_request: 'request').includes(:user)
