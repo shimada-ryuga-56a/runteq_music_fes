@@ -17,8 +17,6 @@ class PerformerRequestPostsController < ApplicationController
     if @post.save
       redirect_to performer_request_posts_path, notice: '投稿が完了しました'
     else
-      p 'error'
-      p @post.errors.full_messages
       flash.now[:alert] = '投稿に失敗しました'
       render :new, status: :unprocessable_entity
     end
