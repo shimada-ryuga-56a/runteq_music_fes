@@ -1,9 +1,12 @@
 <div class="card bg-neutral card-xs shadow-sm p-4">
   <div class="card-body">
     <h2 class="card-title text-xl font-bold">
-      <%= simple_format(post.comment) %>
+      <%= post.title %>
     </h2>
-    <p class="text-xs md:text-sm">
+    <h3 class="card-subtitle text-base">
+      <%= simple_format(post.comment) %>
+    </h3>
+    <p class="text-xs md:text-sm mt-3">
       <%= post.user.term && post.user.term %>期生
       <%= post.user.username %> さん<br>
       （<%= post.created_at.strftime("%m月%d日 %H:%M") %>）
