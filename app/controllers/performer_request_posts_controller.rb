@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 class PerformerRequestPostsController < ApplicationController
-  def index; end
+  skip_before_action :authenticate_user!, only: %i[index]
+  def index
+    @offer_posts = PerformerRequestPost.where(offer_or_request: 'offer').includes(:user)
+    @request_posts = PerformerRequestPost.where(offer_or_request: 'request').includes(:user)
+    @post_users = User.where(id: PerformerRequestPost.pluck(:user_id))
+  end
 
   def new
     @post = current_user.performer_request_posts.build

@@ -1,0 +1,5 @@
+<% users.present? && users.each do |user| %>
+  <dialog id="my_modal_<%= user.id %>" class="modal">
+    <%= render partial: 'attendees/show_modal', locals: { attendee: user } %>
+  </dialog>
+<% end %>

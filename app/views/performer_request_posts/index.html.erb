@@ -1,2 +1,13 @@
-<h1>PerformerRequestPosts#index</h1>
-<p>Find me in app/views/performer_request_posts/index.html.erb</p>
+<div class="page_margin">
+  <h2 class="page_title">出演希望者掲示板</h2>
+  <div class="flex justify-end">
+    <div class="btn btn-primary">
+      <%= link_to "書き込みはこちら", new_performer_request_post_path %>
+    </div>
+  </div>
+  <%= render partial: "performer_request_posts/index/request_posts", locals: { posts: @request_posts } %>
+  <div class="divider"></div>
+  <%= render partial: "performer_request_posts/index/offer_posts", locals: { posts: @offer_posts } %>
+</div>
+
+<%= render partial: "users/modals/prepare_user_modals", locals: { users: @post_users } %>
