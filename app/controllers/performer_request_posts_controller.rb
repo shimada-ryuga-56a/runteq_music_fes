@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class PerformerRequestPostsController < ApplicationController
-  def index; end
+  def index
+    @offer_posts = PerformerRequestPost.where(offer_or_request: 'offer')
+    @request_posts = PerformerRequestPost.where(offer_or_request: 'request')
+  end
 
   def new
     @post = current_user.performer_request_posts.build
