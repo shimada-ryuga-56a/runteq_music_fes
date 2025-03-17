@@ -8,8 +8,10 @@
       <%= post.user.username %> さん<br>
       （<%= post.created_at.strftime("%m月%d日 %H:%M") %>）
     </p>
-    <div class="justify-end card-actions">
-      <button class="btn btn-primary">Buy Now</button>
+    <div class="justify-end card-actions" onclick="my_modal_<%= post.user.id %>.showModal()">
+      <div class="btn btn-soft btn-primary btn-md">
+        <p>投稿者に連絡する📱</p>
+      </div>
     </div>
   </div>
 </div>
