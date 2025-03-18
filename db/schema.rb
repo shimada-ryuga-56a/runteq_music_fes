@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_250_312_035_804) do
+ActiveRecord::Schema[7.1].define(version: 20_250_317_141_627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -32,12 +32,12 @@ ActiveRecord::Schema[7.1].define(version: 20_250_312_035_804) do
     t.datetime 'updated_at', null: false
   end
 
-  create_table 'playable_instruments', force: :cascade do |t|
-    t.string 'instrument_name', null: false
+  create_table 'performer_request_posts', force: :cascade do |t|
     t.integer 'user_id', null: false
-    t.boolean 'hope_for_matching?', default: true, null: false
+    t.text 'comment', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.string 'title', null: false
   end
 
   create_table 'users', force: :cascade do |t|
@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 20_250_312_035_804) do
     t.string 'mattermost_link'
     t.string 'portfolio_link'
     t.string 'x_id'
-    t.boolean 'attend?', default: false, null: false
+    t.boolean 'is_attending', default: false, null: false
     t.integer 'term'
     t.integer 'role'
     t.index ['email'], name: 'index_users_on_email', unique: true

@@ -23,6 +23,14 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     devise_parameter_sanitizer.permit(:account_update,
-                                      keys: %i[username mattermost_link portfolio_link x_id attend? term role])
+                                      keys: %i[
+                                        username
+                                        mattermost_link
+                                        portfolio_link
+                                        x_id
+                                        is_attending
+                                        term
+                                        role
+                                      ])
   end
 end

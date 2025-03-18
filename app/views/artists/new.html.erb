@@ -23,6 +23,9 @@
 
       <div class="fieldset my-2">
         <%= f.label "メンバー", class: "fieldset-legend" %>
+        <p class="text-xs">
+          ソロの場合は、ご自身の名前のみ選択してください。
+        </p>
         <%= render "artists/nested_forms/artist_member_forms", f: f %>
       </div>
 

@@ -12,12 +12,16 @@ ja:
     models:
       user: 'ユーザー'
       artist: 'アーティスト'
+      performer_request_post: '出演募集 掲示板への投稿'
     attributes:
       artist:
         name: '出演名'
         performance_category: 'カテゴリ'
         requested_play_time: '演奏希望時間'
         artist_members: 'メンバー'
+      performer_request_post:
+        title: 'タイトル'
+        comment: 'コメント'
     errors:
       models:
         artist:
@@ -30,6 +34,12 @@ ja:
               blank: "を選択してください"
             artist_members:
               blank: "は最低一人選択してください"
+        performer_request_post:
+          attributes:
+            title:
+              blank: "を選択してください"
+            comment:
+              blank: "を入力してください"
     enums:
       user:
         role:
