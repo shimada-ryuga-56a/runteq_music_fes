@@ -38,7 +38,13 @@ class PerformerRequestPostsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    set_post
+    return unless @post.user == current_user
+
+    @post.destroy
+    redirect_to performer_request_posts_path, notice: '削除が完了しました'
+  end
 
   private
 

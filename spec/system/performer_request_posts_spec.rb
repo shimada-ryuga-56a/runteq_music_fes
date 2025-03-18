@@ -57,16 +57,18 @@ RSpec.describe 'PerformerRequestPosts', type: :system do
       end
     end
 
-    context '自分の投稿の編集画面にアクセスしたとき' do
+    context '自分の投稿があるとき' do
+      before do
+        @post = FactoryBot.create(:performer_request_post, user: @user)
+      end
+
       it '編集画面が表示される' do
-        post = @user.performer_request_posts.create(title: 'title', comment: 'comment')
-        visit edit_performer_request_post_path(post)
+        visit edit_performer_request_post_path(@post)
         expect(page).to have_content '出演募集 掲示板 投稿編集'
       end
 
       it '編集ができる' do
-        post = @user.performer_request_posts.create(title: 'title', comment: 'comment')
-        visit edit_performer_request_post_path(post)
+        visit edit_performer_request_post_path(@post)
         fill_in 'performer_request_post_comment', with: 'comment2'
         click_button '更新する'
         expect(current_path).to eq(performer_request_posts_path)
