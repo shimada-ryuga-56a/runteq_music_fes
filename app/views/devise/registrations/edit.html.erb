@@ -1,18 +1,17 @@
 <div class="page_margin">
   <h2 class="page_title">マイページ</h2>
 
-  <div class="flex items-center justify-center md:pl-8">
-    <div class="w-36 h-36">
-      <%= render partial: 'users/icon', locals: { user: current_user } %>
-    </div>
-  </div>
-
   <div class="py-2 px-4 w-full">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
       <fieldset class="fieldset">
         <%= f.label :username, 'ユーザー名', class:"fieldset-legend" %>
         <%= f.text_field :username, class: "input w-full", placeholder: "ユーザー名"  %>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <%= f.label :image_url, '画像URL', class:"fieldset-legend" %>
+        <%= f.text_field :image_url, class: "input w-full", placeholder: "https://example.com/image.jpg"  %>
       </fieldset>
 
       <fieldset class="fieldset">
