@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   resources :attendees, only: %i[index]
   resource :accesses, only: %i[show]
-  resources :artists, only: %i[index new create]
+  resources :artists, only: %i[index new create] do
+    collection do
+      get 'menu'
+    end
+  end
 
   resources :performer_request_posts, except: %i[show]
 
