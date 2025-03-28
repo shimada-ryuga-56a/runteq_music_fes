@@ -1,0 +1,28 @@
+<dialog id="my_modal_<%= artist.id %>" class="modal">
+  <div class="modal-box border-2 border-neutral">
+    <h3 class="text-lg font-bold">
+      <%= artist.name %>のメンバー
+    </h3>
+    <% artist.artist_members.each do |member| %>
+      <div class="divider"></div>
+      <div class="flex items-center space-x-4">
+        <div class="avatar">
+          <div class="w-10 h-10">
+            <%= render partial: "users/icon", locals: { user: member.user } %>
+          </div>
+        </div>
+        <div class="ml-2">
+          <h2 class="text-lg font-bold">
+            <%= member.user.username %>
+          </h2>
+        </div>
+      </div>
+    <% end %>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">閉じる</button>
+      </form>
+    </div>
+  </div>
+</dialog>

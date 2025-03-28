@@ -8,8 +8,9 @@
         <%= artist.name %>
       </h2>
     </div>
-    <div>
+    <div onclick="my_modal_<%= artist.id %>.showModal()">
       <%= render partial: "artist_members_icon", locals: { members: artist.artist_members } %>
+      <%= render partial: "artists/modals/artist_members", locals: { artist: artist } %>
     </div>
     <div>
       <p class="text-sm md:text-lg">
