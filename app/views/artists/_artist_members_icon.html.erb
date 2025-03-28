@@ -1,0 +1,7 @@
+<div class="avatar-group -space-x-6">
+  <% members.each do |member| %>
+    <div class="w-10 h-10">
+      <%= render partial: "users/icon", locals: { user: member.user } %>
+    </div>
+  <% end %>
+</div>

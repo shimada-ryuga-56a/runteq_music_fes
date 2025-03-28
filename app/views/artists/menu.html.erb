@@ -1,0 +1,7 @@
+<div class="page_margin">
+  <h2 class="page_title">出演者メニュー</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <%= render partial: "artists/cards/artists_wanted_card", locals: { artists: @artists } %>
+    <%= render partial: "artists/cards/performer_request_card" %>
+  </div>
+</div>

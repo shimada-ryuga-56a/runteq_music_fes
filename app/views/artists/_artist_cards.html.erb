@@ -1,0 +1,9 @@
+<% if artists.empty? %>
+  <div class="text-center">
+    <p>出演者は決定していません！</p>
+  </div>
+<% else %>
+  <% artists.each do |artist| %>
+    <%= render partial: "artist_card", locals: { artist: artist } %>
+  <% end %>
+<% end %>
