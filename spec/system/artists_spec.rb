@@ -10,12 +10,30 @@ RSpec.describe 'Artists', type: :system do
 
   let(:user1) { create(:user) }
   let(:user2) { create(:user) }
+  let(:artist1) { create(:artist) }
 
   describe '未ログイン時' do
     context 'artists/indexにアクセスしたとき' do
       it '一覧ページが表示される' do
         visit artists_path
-        expect(page).to have_content '出演者情報'
+        expect(page).to have_content '出演者一覧'
+      end
+    end
+
+    describe 'artists/menuにアクセスしたとき' do
+      it 'メニューページが表示される' do
+        visit menu_artists_path
+        expect(page).to have_content '出演者メニュー'
+      end
+    end
+
+    describe 'artistが存在する状態でartists/indexにアクセスしたとき' do
+      before do
+        artist1
+        visit artists_path
+      end
+      it 'アーティストの名前が表示される' do
+        expect(page).to have_content artist1.name
       end
     end
 
@@ -35,7 +53,7 @@ RSpec.describe 'Artists', type: :system do
     context 'artists/indexにアクセスしたとき' do
       it '一覧ページが表示される' do
         visit artists_path
-        expect(page).to have_content '出演者情報'
+        expect(page).to have_content '出演者一覧'
       end
     end
 
@@ -43,6 +61,13 @@ RSpec.describe 'Artists', type: :system do
       it '新規登録画面が表示される' do
         visit new_artist_path
         expect(page).to have_content '出演希望申請フォーム'
+      end
+    end
+
+    describe 'artists/menuにアクセスしたとき' do
+      it 'メニューページが表示される' do
+        visit menu_artists_path
+        expect(page).to have_content '出演者メニュー'
       end
     end
 

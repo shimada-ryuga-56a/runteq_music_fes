@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class ArtistsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: %i[index menu]
 
   def index
+    @artists = Artist.all
+  end
+
+  def menu
     @artists = Artist.all
   end
 
