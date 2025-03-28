@@ -10,6 +10,7 @@ RSpec.describe 'Artists', type: :system do
 
   let(:user1) { create(:user) }
   let(:user2) { create(:user) }
+  let(:artist1) { create(:artist) }
 
   describe '未ログイン時' do
     context 'artists/indexにアクセスしたとき' do
@@ -23,6 +24,16 @@ RSpec.describe 'Artists', type: :system do
       it 'メニューページが表示される' do
         visit menu_artists_path
         expect(page).to have_content '出演者メニュー'
+      end
+    end
+
+    describe 'artistが存在する状態でartists/indexにアクセスしたとき' do
+      before do
+        artist1
+        visit artists_path
+      end
+      it 'アーティストの名前が表示される' do
+        expect(page).to have_content artist1.name
       end
     end
 
