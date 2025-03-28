@@ -51,7 +51,7 @@ ja:
               invalid: が正しくありません。
             portfolio_link:
               invalid: が正しくありません。
-            image_urk:
+            image_url:
               invalid: が正しくありません。
   devise:
     confirmations:
