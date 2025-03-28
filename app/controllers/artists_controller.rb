@@ -7,6 +7,10 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+  def menu
+    @artists = Artist.all
+  end
+
   def new
     @artist = Artist.new
   end
