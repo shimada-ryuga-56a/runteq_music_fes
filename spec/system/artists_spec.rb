@@ -15,7 +15,14 @@ RSpec.describe 'Artists', type: :system do
     context 'artists/indexにアクセスしたとき' do
       it '一覧ページが表示される' do
         visit artists_path
-        expect(page).to have_content '出演者情報'
+        expect(page).to have_content '出演者一覧'
+      end
+    end
+
+    describe 'artists/menuにアクセスしたとき' do
+      it 'メニューページが表示される' do
+        visit menu_artists_path
+        expect(page).to have_content '出演者メニュー'
       end
     end
 
@@ -35,7 +42,7 @@ RSpec.describe 'Artists', type: :system do
     context 'artists/indexにアクセスしたとき' do
       it '一覧ページが表示される' do
         visit artists_path
-        expect(page).to have_content '出演者情報'
+        expect(page).to have_content '出演者一覧'
       end
     end
 
@@ -43,6 +50,13 @@ RSpec.describe 'Artists', type: :system do
       it '新規登録画面が表示される' do
         visit new_artist_path
         expect(page).to have_content '出演希望申請フォーム'
+      end
+    end
+
+    describe 'artists/menuにアクセスしたとき' do
+      it 'メニューページが表示される' do
+        visit menu_artists_path
+        expect(page).to have_content '出演者メニュー'
       end
     end
 
