@@ -11,7 +11,13 @@
 
       <fieldset class="fieldset">
         <%= f.label :image_url, 'アイコン画像', class:"fieldset-legend" %>
-        <span class="label ml-2">（Xのアイコン等を左クリックし、「画像アドレスをコピー」してください）</span>
+        <span class="label">
+          （PCでの操作推奨）<br>
+          1. Xを開き、自分のプロフィール画面にアクセス<br>
+          2. アイコンをクリックし、画像を右クリック<br>
+          3. 「画像アドレスをコピー」をクリック<br>
+          4. 下のテキストボックスに貼り付けてください
+        </span>
         <%= f.text_field :image_url, class: "input w-full", placeholder: "https://example.com/image.jpg"  %>
       </fieldset>
 
