@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   validates :mattermost_link, format: { with: URI::DEFAULT_PARSER.make_regexp }, allow_blank: true
   validates :portfolio_link, format: { with: URI::DEFAULT_PARSER.make_regexp }, allow_blank: true
+  validates :image_url, format: { with: URI::DEFAULT_PARSER.make_regexp }, allow_blank: true
 
   has_many :artist_members, dependent: :destroy
   has_many :artists, through: :artist_members

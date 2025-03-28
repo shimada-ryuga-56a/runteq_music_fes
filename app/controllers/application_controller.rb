@@ -31,6 +31,7 @@ class ApplicationController < ActionController::Base
                                         is_attending
                                         term
                                         role
+                                        image_url
                                       ])
   end
 end

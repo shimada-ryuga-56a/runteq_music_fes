@@ -28,6 +28,7 @@ ja:
         username: ユーザー名
         mattermost_link: Mattermost timesリンク
         portfolio_link: ソーシャルポートフォリオリンク
+        image_url: 画像URL
     models:
       user: ユーザー
     errors:
@@ -49,6 +50,8 @@ ja:
             mattermost_link:
               invalid: が正しくありません。
             portfolio_link:
+              invalid: が正しくありません。
+            image_url:
               invalid: が正しくありません。
   devise:
     confirmations:

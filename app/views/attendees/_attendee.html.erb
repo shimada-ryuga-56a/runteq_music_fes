@@ -1,7 +1,7 @@
 <li class="list-row w-full" onclick="my_modal_<%= attendee.id %>.showModal()">
   <div class="flex">
     <div class="w-10 h-10">
-      <div class="skeleton w-10 h-10 rounded-3"></div>
+      <%= render partial: 'users/icon', locals: { user: attendee } %>
     </div>
     <div class="pl-4">
       <div class="link"><%= attendee.username %></div>

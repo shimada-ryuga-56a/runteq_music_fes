@@ -1,3 +1,5 @@
-<div class="skeleton w-full h-full flex items-center justify-center">
-  <p class="text-sm">アイコンはちょまち</p>
-</div>
+<% if user.image_url.present? %>
+  <img src="<%= user.image_url %>" alt="<%= user.username %>" class="w-full h-full rounded-full">
+<% else %>
+  <div class="skeleton w-full h-full rounded-full"></div>
+<% end %>
