@@ -44,3 +44,4 @@ rdoc
 pkg
 tmp
 .rvmrc
+.DS_Store
