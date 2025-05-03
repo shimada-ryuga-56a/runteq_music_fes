@@ -1,8 +1,25 @@
 <div class="page_margin">
   <h2 class="page_title">RUNTEQ MUSIC FES</h2>
-  <p>coming soon...</p>
-  <p>date: 2024/5/17(土)</p>
-  <p>
-    place: <%= link_to "四谷LOTUS", "https://yotsuyalotus.com/", target: "_blank", class: "link" %>
-  </p>
+  <div>
+    <p>
+      <i class="fa-solid fa-calendar-days mr-2"></i><time datetime="2024-05-17">2024/5/17(土)</time>
+    </p>
+    <p>
+      <i class="fa-solid fa-clock mr-2"></i>開場13:00 / 開演14:00
+    </p>
+    <p>
+      <i class="fa-solid fa-map-pin mr-2"></i><%= link_to "四谷LOTUS", "https://yotsuyalotus.com/", target: "_blank", class: "link" %>
+    </p>
+  </div>
+
+  <div class="mt-4 mb-4 md:mx-12 lg:mx-24 w-2/3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <%= link_to menu_artists_path, class: "btn btn-primary" do %>
+      <i class="fa-solid fa-music mr-2"></i>タイムテーブルの確認はこちら
+    <% end %>
+    <%= link_to attendees_path, class: "btn btn-primary" do %>
+      <i class="fa-solid fa-users mr-2"></i>参加者の確認・登録はこちら
+    <% end %>
+    <%= link_to accesses_path, class: "btn btn-primary" do %>
+      <i class="fa-solid fa-location-dot mr-2"></i>アクセスの確認はこちら
+    <% end %>
 </div>
