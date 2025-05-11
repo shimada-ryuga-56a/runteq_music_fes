@@ -22,7 +22,7 @@ class User < ApplicationRecord
   has_many :performer_request_posts, dependent: :destroy
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[username]
+    %w[username term]
   end
 
   def self.ransackable_associations(auth_object = nil)
