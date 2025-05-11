@@ -2,6 +2,7 @@
   <h2 class="page_title">参加者一覧</h2>
 
   <%= render partial: 'attendees/update_attend_status' %>
+  <%= render 'search', q: @q, url: attendees_path %>
   <% if @attendees.empty? %>
     <p>参加予定者はいません。</p>
   <% else %>
