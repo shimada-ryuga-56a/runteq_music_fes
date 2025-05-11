@@ -5,9 +5,6 @@
   <% if @attendees.empty? %>
     <p>参加予定者はいません。</p>
   <% else %>
-    <p class="my-4">
-      参加予定者数：<%= @attendees.count %>名
-    </p>
     <%= render partial: 'attendees', locals: { attendees: @attendees } %>
   <% end %>
 </div>
