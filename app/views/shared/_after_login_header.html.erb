@@ -3,8 +3,11 @@
     <p class="btn btn-ghost text-xl">RUNTEQ MUSIC FES</p>
   <% end %>
   <div class="flex-none">
+    <%= link_to "https://ksk.botofune.com/", target: "_blank", class: "btn btn-ghost btn-xs" do %>
+      <i class="fa-solid fa-bullhorn fa-xs"></i>
+    <% end %>
     <%= link_to destroy_user_session_path, data: { "turbo-method": :delete } do %>
-      <i class="fa-solid fa-right-from-bracket"></i>
+      <i class="fa-solid fa-right-from-bracket fa-xs"></i>
     <% end %>
   </div>
 </div>
