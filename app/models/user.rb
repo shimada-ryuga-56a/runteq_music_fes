@@ -21,23 +21,23 @@ class User < ApplicationRecord
 
   has_many :performer_request_posts, dependent: :destroy
 
-  def self.ransackable_attributes(auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil)
     %w[username term]
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(_auth_object = nil)
     %w[artist_members artists performer_request_posts]
   end
 
-  def self.ransackable_scopes(auth_object = nil)
+  def self.ransackable_scopes(_auth_object = nil)
     []
   end
 
-  def self.ransackable_conditions(auth_object = nil)
+  def self.ransackable_conditions(_auth_object = nil)
     []
   end
 
-  def self.ransackable_methods(auth_object = nil)
+  def self.ransackable_methods(_auth_object = nil)
     []
   end
 
