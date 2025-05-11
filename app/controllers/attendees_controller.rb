@@ -6,6 +6,6 @@ class AttendeesController < ApplicationController
   def index
     @q = User.ransack(params[:q])
     @attendees = @q.result(distinct: true).where(is_attending: true).order(updated_at: :desc)
-    @terms = User.pluck(:term).uniq.sort
+    @terms = User.pluck(:term).uniq.compact.sort
   end
 end
