@@ -29,6 +29,27 @@ puts '== Creating Users =='
   end
 end
 
+# さらなるユーザー（適当な名前、期）（is_attendingはtrue）
+puts '== Creating More Users =='
+10.times do |i|
+  User.find_or_create_by!(email: "example#{i + 1})@example.com") do |user|
+    puts '*'
+    hiragama = %w[あ い う え お か き く け こ さ し す せ そ た ち つ て と な に ぬ ね の は ひ ふ へ ほ]
+    kanji = %w[亜 伊 宇 江 佳 希 久 佐 志 須 瀬 曽 多 千 津 天 那 二 ぬ ね の 波 比 ふ へ 保]
+    # hiraganaとkanjiをランダムに選ぶ
+    random_hiragana = hiragama.sample(3).join
+    random_kanji = kanji.sample(3).join
+    user.username = "#{random_hiragana}#{random_kanji}"
+    user.email = "example#{i + 1})@example.com"
+    user.password = 'password'
+    user.password_confirmation = 'password'
+    user.term = i * 2
+    user.is_attending = true
+    user.mattermost_link = "https://example.com/#{user.username}"
+    user.portfolio_link = "https://example.com/#{user.username}"
+  end
+end
+
 puts '== Deleting No Title PerformerRequestPosts =='
 @no_title_performer_request_posts = PerformerRequestPost.where(title: 'title')
 @no_title_performer_request_posts.each do |post|
