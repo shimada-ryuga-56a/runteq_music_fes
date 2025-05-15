@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'psylliums/index'
   get 'static_pages/top'
   devise_for :users, skip: :all
   devise_scope :user do
